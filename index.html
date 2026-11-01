@@ -35,11 +35,14 @@
             border: 1px solid rgba(0, 229, 255, 0.4);
             background-color: rgba(2, 9, 15, 0.95);
             padding: 45px;
-            width: 450px;
-            text-align: center;
+            width: 480px;
+            min-height: 350px;
             box-shadow: 0 0 35px rgba(0, 229, 255, 0.1);
             position: relative;
             z-index: 20;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .system-tag {
@@ -48,23 +51,30 @@
             text-transform: uppercase;
             margin-bottom: 25px;
             letter-spacing: 4px;
+            text-align: center;
+        }
+
+        .content-area {
+            text-align: left;
+            flex-grow: 1;
         }
 
         h1 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: #ffffff;
             margin: 0 0 20px 0;
             text-transform: uppercase;
             letter-spacing: 4px;
             text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+            text-align: center;
         }
 
-        p {
-            font-size: 0.9rem;
+        p, .info-block {
+            font-size: 0.85rem;
             line-height: 1.7;
             color: #b3f0ff;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
         }
 
         .btn-decrypt {
@@ -80,6 +90,7 @@
             width: 100%;
             transition: all 0.3s ease;
             margin-bottom: 12px;
+            box-sizing: border-box;
         }
 
         .btn-decrypt:hover {
@@ -89,36 +100,54 @@
             font-weight: bold;
         }
 
-        /* El contenedor del menú inicia completamente oculto */
         #menu-container {
             display: none;
             flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .sub-text {
+            color: #a3ffc2;
+            border-left: 2px solid #00e5ff;
+            padding-left: 10px;
+            margin-top: 15px;
+        }
+
+        .btn-back {
+            border-color: rgba(0, 229, 255, 0.4);
+            color: rgba(0, 229, 255, 0.6);
+            font-size: 0.75rem;
+            padding: 8px;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
 
     <div class="vault-box">
-        <div class="system-tag">[ CONEXIÓN ANÓNIMA ESTABLECIDA ]</div>
+        <div class="system-tag" id="sys-tag">[ CONEXIÓN ANÓNIMA ESTABLECIDA ]</div>
         
-        <h1 id="main-title">U.M.B.R.A. DYNAMICS</h1>
-        
-        <p id="main-text">
-            Acceso restringido al directorio central de Umbra Dynamics. Registros confidenciales de personal, facciones y protocolos operativos.
-        </p>
+        <div class="content-area">
+            <h1 id="main-title">U.M.B.R.A. DYNAMICS</h1>
+            
+            <div id="dynamic-content">
+                <p>Acceso restringido al directorio central de Umbra Dynamics. Registros confidenciales de personal, facciones y protocolos operativos.</p>
+            </div>
+        </div>
 
-        <!-- Botón de entrada inicial con función directa -->
-        <button id="btn-initial" class="btn-decrypt" onclick="document.getElementById('btn-initial').style.display='none'; document.getElementById('main-title').innerText='DIRECTORIO CENTRAL'; document.getElementById('main-text').innerText='Seleccione el módulo de información corporativa que desea consultar.'; document.getElementById('menu-container').style.display='flex';">
-            PRESIONA PARA CONTINUAR
-        </button>
+        <div class="actions-area">
+            <!-- Botón de entrada inicial -->
+            <button id="btn-initial" class="btn-decrypt" onclick="mostrarMenu()">
+                PRESIONA PARA CONTINUAR
+            </button>
 
-        <!-- Opciones ocultas del menú -->
-        <div id="menu-container">
-            <button class="btn-decrypt" onclick="alert('[MANIFIESTO]: Fundada bajo el principio de evolución controlada. Umbra Dynamics opera en la frontera de la bio-tecnología avanzada.')">Sobre Nosotros</button>
-            <button class="btn-decrypt" onclick="alert('[PERSONAL SCOUT]: Alto Mando Ejecutivo: Director V. // Jefe de Seguridad: Comandante Thorne.')">Quiénes Somos</button>
-            <button class="btn-decrypt" onclick="accederArchivosSecretos()">Archivos Protegidos_</button>
+            <!-- Opciones del menú (inician ocultas) -->
+            <div id="menu-container">
+                <button class="btn-decrypt" onclick="cargarSeccion('sobre-nosotros')">Sobre Nosotros</button>
+                <button class="btn-decrypt" onclick="cargarSeccion('quienes-somos')">Quiénes Somos</button>
+                <button class="btn-decrypt" onclick="accederArchivosSecretos()">Archivos Protegidos_</button>
+            </div>
         </div>
     </div>
 
@@ -128,6 +157,49 @@
     <script src="https://gstatic.com"></script>
     <script src="js/main.js"></script>
 
+    <script>
+        function mostrarMenu() {
+            document.getElementById('btn-initial').style.display = 'none';
+            document.getElementById('sys-tag').innerText = "[ MENU PRINCIPAL SELECCIONADO ]";
+            document.getElementById('main-title').innerText = "DIRECTORIO CENTRAL";
+            document.getElementById('dynamic-content').innerHTML = "<p>Seleccione el módulo de información corporativa que desea consultar en la terminal.</p>";
+            document.getElementById('menu-container').style.display = 'flex';
+        }
+
+        function cargarSeccion(tipo) {
+            document.getElementById('menu-container').style.display = 'none';
+            
+            let htmlContenido = "";
+            
+            if(tipo === 'sobre-nosotros') {
+                document.getElementById('sys-tag').innerText = "[ EXPEDIENTE // MANIFIESTO ]";
+                document.getElementById('main-title').innerText = "SOBRE NOSOTROS";
+                htmlContenido = `
+                    <div class="info-block">
+                        Fundada bajo el principio de evolución controlada. Umbra Dynamics opera en la frontera de la bio-tecnología avanzada, manipulación cuántica de datos y el despliegue de soluciones tácticas globales.
+                        <div class="sub-text">// OBJETIVO: Preservar la supremacía de los líderes de facción ante escenarios de colapso planetario.</div>
+                    </div>
+                `;
+            } else if(tipo === 'quienes-somos') {
+                document.getElementById('sys-tag').innerText = "[ EXPEDIENTE // ORGANIGRAMA ]";
+                document.getElementById('main-title').innerText = "ALTO MANDO";
+                htmlContenido = `
+                    <div class="info-block">
+                        • <strong>DIRECTOR V.</strong><br>
+                        [Estatus: Activo] // Fundador de la Iniciativa Umbra.<br><br>
+                        • <strong>COMANDANTE THORNE</strong><br>
+                        [Estatus: En Operaciones] // Dirección de Seguridad de Facción.
+                    </div>
+                `;
+            }
+            
+            // Añadir el botón para volver al menú de opciones
+            htmlContenido += `<button class="btn-decrypt btn-back" onclick="mostrarMenu()">◀ VOLVER AL MENU</button>`;
+            document.getElementById('dynamic-content').innerHTML = htmlContenido;
+        }
+    </script>
+
 </body>
 </html>
+
 
