@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMBRA DYNAMICS // SECURE VAULT</title>
+    <style>
+        /* Fondo negro puro y tipografía de terminal hacker */
+        body {
+            background-color: #020406;
+            color: #00e5ff; /* Azul cian brillante */
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            letter-spacing: 2px;
+            animation: flicker 0.15s infinite; /* Parpadeo sutil analógico */
+        }
+
+        /* REJILLA DE MONITOR VIEJO CRT (Scanlines + Grid) */
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: 
+                linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%), 
+                linear-gradient(90deg, rgba(0, 229, 255, 0.03), rgba(0, 0, 0, 0.1), rgba(0, 229, 255, 0.03));
+            z-index: 100;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .vault-box {
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            background-color: rgba(2, 9, 15, 0.95);
+            padding: 45px;
+            max-width: 460px;
+            text-align: center;
+            box-shadow: 0 0 35px rgba(0, 229, 255, 0.1);
+            position: relative;
+            z-index: 20;
+        }
+
+        /* MARCA DE AGUA / LOGO CENTRAL DE UMBRA DYNAMICS */
+        .umbra-logo {
+            font-size: 4rem;
+            font-weight: 900;
+            color: rgba(0, 229, 255, 0.05); /* Muy sutil en el fondo del cuadro */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            letter-spacing: 15px;
+            z-index: -1;
+            pointer-events: none;
+            user-select: none;
+            border: 4px double rgba(0, 229, 255, 0.03);
+            padding: 10px 0 10px 15px;
+        }
+
+        .system-tag {
+            font-size: 0.75rem;
+            color: rgba(0, 229, 255, 0.6);
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            letter-spacing: 4px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+        }
+
+        p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #b3f0ff;
+            margin-bottom: 35px;
+        }
+
+        .blink {
+            animation: parpadeo 1.2s infinite;
+        }
+
+        /* Animaciones analógicas */
+        @keyframes parpadeo {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.99; }
+            50% { opacity: 1; }
+            100% { opacity: 0.98; }
+        }
+
+        /* Botón de la terminal */
+        .btn-decrypt {
+            background-color: transparent;
+            border: 1px solid #00e5ff;
+            color: #00e5ff;
+            padding: 12px 30px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .btn-decrypt:hover {
+            background-color: #00e5ff;
+            color: #020406;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="vault-box">
+        <!-- Logo central oculto tras el texto -->
+        <div class="umbra-logo">UD</div>
+
+        <div class="system-tag">[ CONEXIÓN ANÓNIMA ESTABLECIDA ]</div>
+        
+        <h1>U.M.B.R.A. DYNAMICS</h1>
+        
+        <p>
+            Acceso restringido al directorio central de Umbra Dynamics. Registros confidenciales de personal, facciones y protocolos operativos.
+        </p>
+
+        <!-- Botón para avanzar -->
+        <button class="btn-decrypt" onclick="descifrarBoveda()">Presiona para continuar<span class="blink">_</span></button>
+
+    <script>
+        function descifrarBoveda() {
+            alert("[SISTEMA]: Bypass del cortafuegos exitoso. Abriendo base de datos confidencial...");
+            // Aquí irá el puente con Firebase
+        }
+        <!-- Cargar librerías de Firebase desde la nube de Google -->
+    <script src="https://gstatic.com"></script>
+    <script src="https://gstatic.com"></script>
+    <script src="https://gstatic.com"></script>
+    
+    <!-- Cargar tu archivo de lógica corporativa -->
+    <script src="js/main.js"></script>
+
+
+</body>
+</html>
+
