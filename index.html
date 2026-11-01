@@ -43,6 +43,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-sizing: border-box;
         }
 
         .system-tag {
@@ -150,6 +151,8 @@
             margin-top: 15px;
             text-align: center;
             font-size: 0.8rem;
+            letter-spacing: 1px;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -181,12 +184,7 @@
         </div>
     </div>
 
-    <!-- Motores de Firebase y lógica externa -->
-    <script src="https://gstatic.com"></script>
-    <script src="https://gstatic.com"></script>
-    <script src="https://gstatic.com"></script>
-    <script src="js/main.js"></script>
-
+    <!-- Script de lógica interno e independiente -->
     <script>
         function mostrarMenu() {
             document.getElementById('btn-initial').style.display = 'none';
@@ -230,7 +228,6 @@
                 document.getElementById('sys-tag').innerText = "[ AUTENTICACIÓN REQUERIDA ]";
                 document.getElementById('main-title').innerText = "SISTEMA ENCRIPTADO";
                 
-                // CAMBIADO: Se inyecta la caja de texto directamente en la pantalla
                 htmlContenido = `
                     <div class="info-block">
                         El directorio de nivel 4/5 exige un código válido de desencriptación para autorizar la conexión.
@@ -238,30 +235,27 @@
                     <input type="password" id="input-vault-pass" class="terminal-input" placeholder="INGRESE CONTRASEÑA_">
                     <div id="error-output"></div>
                     
-                    <button class="btn-decrypt" onclick="validarClaveInterna()">DESENCRIPTAR DIRECTOS_</button>
+                    <button class="btn-decrypt" onclick="validarClaveInterna()">DESENCRIPTAR DIRECTO_</button>
                     <button class="btn-decrypt btn-back" onclick="mostrarMenu()">◀ ABORTAR PROTOCOLO</button>
                 `;
                 document.getElementById('dynamic-content').innerHTML = htmlContenido;
             }
         }
 
-        // Validación visual en pantalla de la frase secreta
+        // Esta es la función matemática que revisará tu clave
         function validarClaveInterna() {
             const passIngresada = document.getElementById('input-vault-pass').value;
-            const claveReal = "pormísevaaleternodolor"; // Tu contraseña de rol
+            const claveReal = "pormísevaaleternodolor"; 
             
             if (passIngresada === claveReal) {
                 document.getElementById('error-output').innerHTML = "";
-                alert("[SISTEMA]: Código verificado. Abriendo bódvea...");
-                window.location.href = "directorio.html"; // Salta a la base de datos
+                alert("[SISTEMA]: Código verificado. Abriendo boveda...");
+                window.location.href = "directorio.html"; 
             } else {
-
-    <!-- Motores de Firebase y lógica externa -->
-    <script src="https://gstatic.com"></script>
-    <script src="https://gstatic.com"></script>
-    <script src="https://gstatic.com"></script>
-    <script src="js/main.js"></script>
-        }
-    </script>
-</body>
-</html>
+                // Inserta el aviso de castigo directamente abajo de la caja de texto
+                document.getElementById('error-output').innerHTML = `
+                    <div class="error-message">
+                        🚨 [ACCESO DENEGADO]<br>Vuestro destino se encamina al eterno dolor. Intento registrado.
+                    </div>
+                `;
+            }
