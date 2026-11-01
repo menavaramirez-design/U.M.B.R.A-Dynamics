@@ -18,7 +18,6 @@
             letter-spacing: 2px;
         }
 
-        /* Rejilla de monitor antiguo */
         body::before {
             content: " ";
             display: block;
@@ -34,23 +33,22 @@
         .vault-box {
             border: 1px solid rgba(0, 229, 255, 0.4);
             background-color: rgba(2, 9, 15, 0.95);
-            padding: 45px;
+            padding: 40px;
             width: 480px;
-            min-height: 380px;
+            min-height: 420px;
             box-shadow: 0 0 35px rgba(0, 229, 255, 0.1);
             position: relative;
             z-index: 20;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-sizing: border-box;
         }
 
         .system-tag {
             font-size: 0.75rem;
             color: rgba(0, 229, 255, 0.6);
             text-transform: uppercase;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             letter-spacing: 4px;
             text-align: center;
         }
@@ -76,6 +74,34 @@
             color: #b3f0ff;
             margin-bottom: 25px;
             text-align: left;
+        }
+
+        /* DISEÑO DE IMÁGENES CON ESTILO CIBERNÉTICO */
+        .corp-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 10px auto;
+            border: 1px dashed #00e5ff;
+            padding: 5px;
+            object-fit: cover;
+        }
+
+        .leader-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            padding: 10px;
+            background: rgba(0, 229, 255, 0.02);
+        }
+
+        .leader-img {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #00e5ff;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(120%); /* Efecto foto de archivo militar */
         }
 
         .btn-decrypt {
@@ -122,38 +148,6 @@
             padding: 8px;
             margin-top: 15px;
         }
-
-        /* CUADRO DE TEXTO INTEGRADO ESTILO TERMINAL */
-        .terminal-input {
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            border: 1px solid #00e5ff;
-            color: #ffffff;
-            padding: 12px;
-            font-family: inherit;
-            font-size: 0.9rem;
-            box-sizing: border-box;
-            margin-bottom: 15px;
-            outline: none;
-            text-align: center;
-            letter-spacing: 2px;
-        }
-        
-        .terminal-input:focus {
-            box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
-        }
-
-        .error-message {
-            color: #ff3366;
-            font-weight: bold;
-            border: 1px dashed #ff3366;
-            padding: 10px;
-            margin-top: 15px;
-            text-align: center;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            line-height: 1.4;
-        }
     </style>
 </head>
 <body>
@@ -162,6 +156,9 @@
         <div class="system-tag" id="sys-tag">[ CONEXIÓN ANÓNIMA ESTABLECIDA ]</div>
         
         <div class="content-area">
+            <!-- IMAGEN: LOGO DE INICIO (Puedes cambiar el link de abajo por tu logo) -->
+            <img id="main-logo" class="corp-logo" src="https://cdn.discordapp.com/attachments/912353711257423913/1566557051268628551/48210fa2-da97-4a80-a221-f141ca3e9887.png?ex=6ae8f972&is=6ae7a7f2&hm=3929d2c79dcdaac4efa6c9babaa0a5b009586d5bd424cdba75a4e44dc84c3954&" alt="UD Logo">
+            
             <h1 id="main-title">U.M.B.R.A. DYNAMICS</h1>
             
             <div id="dynamic-content">
@@ -170,24 +167,27 @@
         </div>
 
         <div class="actions-area">
-            <!-- Botón de entrada inicial -->
             <button id="btn-initial" class="btn-decrypt" onclick="mostrarMenu()">
                 PRESIONA PARA CONTINUAR
             </button>
 
-            <!-- Opciones del menú (inician ocultas) -->
             <div id="menu-container">
                 <button class="btn-decrypt" onclick="cargarSeccion('sobre-nosotros')">Sobre Nosotros</button>
                 <button class="btn-decrypt" onclick="cargarSeccion('quienes-somos')">Quiénes Somos</button>
-                <button class="btn-decrypt" onclick="cargarSeccion('solicitar-clave')">Archivos Protegidos_</button>
+                <button class="btn-decrypt" onclick="accederArchivosSecretos()">Archivos Protegidos_</button>
             </div>
         </div>
     </div>
 
-    <!-- Script de lógica interno e independiente -->
+    <script src="https://gstatic.com"></script>
+    <script src="https://gstatic.com"></script>
+    <script src="https://gstatic.com"></script>
+    <script src="js/main.js"></script>
+
     <script>
         function mostrarMenu() {
             document.getElementById('btn-initial').style.display = 'none';
+            document.getElementById('main-logo').style.display = 'none'; // Escondemos el logo grande en el menú
             document.getElementById('sys-tag').innerText = "[ MENU PRINCIPAL SELECCIONADO ]";
             document.getElementById('main-title').innerText = "DIRECTORIO CENTRAL";
             document.getElementById('dynamic-content').innerHTML = "<p>Seleccione el módulo de información corporativa que desea consultar en la terminal.</p>";
@@ -206,56 +206,36 @@
                         Umbra Dynamics opera en la frontera de la bio-tecnología avanzada y el despliegue de soluciones tácticas globales.
                         <div class="sub-text">// OBJETIVO: Preservar la supremacía de los líderes de facción ante escenarios de colapso planetario.</div>
                     </div>
-                    <button class="btn-decrypt btn-back" onclick="mostrarMenu()">◀ VOLVER AL MENU</button>
                 `;
-                document.getElementById('dynamic-content').innerHTML = htmlContenido;
-                
             } else if(tipo === 'quienes-somos') {
                 document.getElementById('sys-tag').innerText = "[ EXPEDIENTE // ORGANIGRAMA ]";
                 document.getElementById('main-title').innerText = "ALTO MANDO";
+                
+                // AQUÍ SE INTEGRAN LAS IMÁGENES DE LOS LÍDERES (Reemplaza los links en 'src')
                 htmlContenido = `
                     <div class="info-block">
-                        • <strong>DIRECTOR V.</strong><br>
-                        [Estatus: Activo] // Fundador de la Iniciativa Umbra.<br><br>
-                        • <strong>COMANDANTE THORNE</strong><br>
-                        [Estatus: En Operaciones] // Dirección de Seguridad de Facción.
+                        <div class="leader-profile">
+                            <img class="leader-img" src="https://i.pinimg.com/736x/d9/94/dc/d994dcad55ce5ac6b20a80141c8619e8.jpg" alt="Director V.">
+                            <div>
+                                <strong>DIRECTOR V.</strong><br>
+                                <span style="font-size:0.75rem; color:rgba(0,229,255,0.6);">[Estatus: Activo] // Fundador</span>
+                            </div>
+                        </div>
+                        
+                        <div class="leader-profile">
+                            <img class="leader-img" src="https://i.pinimg.com/736x/50/1d/0a/501d0a4b4013ddb28dec7591c1543073.jpg" alt="Cdr. Thorne">
+                            <div>
+                                <strong>COMANDANTE THORNE</strong><br>
+                                <span style="font-size:0.75rem; color:rgba(0,229,255,0.6);">[Estatus: En Operaciones] // Seguridad</span>
+                            </div>
+                        </div>
                     </div>
-                    <button class="btn-decrypt btn-back" onclick="mostrarMenu()">◀ VOLVER AL MENU</button>
                 `;
-                document.getElementById('dynamic-content').innerHTML = htmlContenido;
-                
-            } else if(tipo === 'solicitar-clave') {
-                document.getElementById('sys-tag').innerText = "[ AUTENTICACIÓN REQUERIDA ]";
-                document.getElementById('main-title').innerText = "SISTEMA ENCRIPTADO";
-                
-                htmlContenido = `
-                    <div class="info-block">
-                        El directorio de nivel 4/5 exige un código válido de desencriptación para autorizar la conexión.
-                    </div>
-                    <input type="password" id="input-vault-pass" class="terminal-input" placeholder="INGRESE CONTRASEÑA_">
-                    <div id="error-output"></div>
-                    
-                    <button class="btn-decrypt" onclick="validarClaveInterna()">DESENCRIPTAR DIRECTO_</button>
-                    <button class="btn-decrypt btn-back" onclick="mostrarMenu()">◀ ABORTAR PROTOCOLO</button>
-                `;
-                document.getElementById('dynamic-content').innerHTML = htmlContenido;
             }
-        }
-
-        // Esta es la función matemática que revisará tu clave
-        function validarClaveInterna() {
-            const passIngresada = document.getElementById('input-vault-pass').value;
-            const claveReal = "pormísevaaleternodolor"; 
             
-            if (passIngresada === claveReal) {
-                document.getElementById('error-output').innerHTML = "";
-                alert("[SISTEMA]: Código verificado. Abriendo boveda...");
-                window.location.href = "directorio.html"; 
-            } else {
-                // Inserta el aviso de castigo directamente abajo de la caja de texto
-                document.getElementById('error-output').innerHTML = `
-                    <div class="error-message">
-                        🚨 [ACCESO DENEGADO]<br>Vuestro destino se encamina al eterno dolor. Intento registrado.
-                    </div>
-                `;
-            }
+            htmlContenido += `<button class="btn-decrypt btn-back" onclick="mostrarMenu()">◀ VOLVER AL MENU</button>`;
+            document.getElementById('dynamic-content').innerHTML = htmlContenido;
+        }
+    </script>
+</body>
+</html>
