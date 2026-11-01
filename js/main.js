@@ -35,3 +35,27 @@ function descifrarBoveda() {
             alert("[SISTEMA/ERROR]: Acceso Denegado. Cortafuegos corporativo activo.");
         });
 }
+
+// ==========================================
+// SISTEMA DE ENCRIPTACIÓN DE ARCHIVOS
+// ==========================================
+const CONTRASEÑA_CORRECTA = "pormísevaaleternodolor"; 
+
+function accederArchivosSecretos() {
+    console.log("[SISTEMA]: Inicializando cortafuegos de encriptación...");
+    
+    let passwordIngresada = prompt("[SEGURIDAD UMBRA]: INTRODUZCA CÓDIGO DE DESENCRIPTACIÓN NIVELES 4/5:");
+
+    if (passwordIngresada === null || passwordIngresada.trim() === "") {
+        console.log("[SISTEMA]: Solicitud cancelada por el usuario.");
+        return; 
+    }
+
+    if (passwordIngresada === CONTRASEÑA_CORRECTA) {
+        alert("[SISTEMA]: Código verificado. Desencriptando archivos prohibidos...");
+        window.location.href = "directorio.html"; 
+    } else {
+        alert("[ALERTA CRÍTICA]: ACCESO DENEGADO.\n\nPor el protocolo de seguridad de Umbra Dynamics, vuestro destino se encamina al eterno dolor. Intento de intrusión registrado.");
+    }
+}
+
