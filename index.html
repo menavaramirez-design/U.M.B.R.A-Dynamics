@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMBRA DYNAMICS // SECURE VAULT</title>
     <style>
-        /* Fondo negro puro y tipografía de terminal hacker */
         body {
             background-color: #020406;
-            color: #00e5ff; /* Azul cian brillante */
+            color: #00e5ff;
             font-family: 'Courier New', Courier, monospace;
             display: flex;
             justify-content: center;
@@ -17,10 +16,9 @@
             margin: 0;
             overflow: hidden;
             letter-spacing: 2px;
-            animation: flicker 0.15s infinite; /* Parpadeo sutil analógico */
+            animation: flicker 0.15s infinite;
         }
 
-        /* REJILLA DE MONITOR VIEJO CRT (Scanlines + Grid) */
         body::before {
             content: " ";
             display: block;
@@ -39,28 +37,23 @@
             border: 1px solid rgba(0, 229, 255, 0.4);
             background-color: rgba(2, 9, 15, 0.95);
             padding: 45px;
-            max-width: 460px;
+            width: 480px;
             text-align: center;
             box-shadow: 0 0 35px rgba(0, 229, 255, 0.1);
             position: relative;
             z-index: 20;
         }
 
-        /* MARCA DE AGUA / LOGO CENTRAL DE UMBRA DYNAMICS */
         .umbra-logo {
             font-size: 4rem;
             font-weight: 900;
-            color: rgba(0, 229, 255, 0.05); /* Muy sutil en el fondo del cuadro */
+            color: rgba(0, 229, 255, 0.03);
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             letter-spacing: 15px;
             z-index: -1;
-            pointer-events: none;
             user-select: none;
-            border: 4px double rgba(0, 229, 255, 0.03);
-            padding: 10px 0 10px 15px;
         }
 
         .system-tag {
@@ -88,23 +81,11 @@
             margin-bottom: 35px;
         }
 
-        .blink {
-            animation: parpadeo 1.2s infinite;
-        }
+        .blink { animation: parpadeo 1.2s infinite; }
 
-        /* Animaciones analógicas */
-        @keyframes parpadeo {
-            0%, 49% { opacity: 1; }
-            50%, 100% { opacity: 0; }
-        }
+        @keyframes parpadeo { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+        @keyframes flicker { 0% { opacity: 0.99; } 50% { opacity: 1; } 100% { opacity: 0.98; } }
 
-        @keyframes flicker {
-            0% { opacity: 0.99; }
-            50% { opacity: 1; }
-            100% { opacity: 0.98; }
-        }
-
-        /* Botón de la terminal */
         .btn-decrypt {
             background-color: transparent;
             border: 1px solid #00e5ff;
@@ -117,6 +98,7 @@
             cursor: pointer;
             width: 100%;
             transition: all 0.3s ease;
+            margin-bottom: 10px;
         }
 
         .btn-decrypt:hover {
@@ -125,39 +107,64 @@
             box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
             font-weight: bold;
         }
+
+        /* Contenedor oculto del menú */
+        .menu-options {
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
     <div class="vault-box">
-        <!-- Logo central oculto tras el texto -->
         <div class="umbra-logo">UD</div>
-
         <div class="system-tag">[ CONEXIÓN ANÓNIMA ESTABLECIDA ]</div>
         
-        <h1>U.M.B.R.A. DYNAMICS</h1>
+        <h1 id="main-title">U.M.B.R.A. DYNAMICS</h1>
         
-        <p>
+        <p id="main-text">
             Acceso restringido al directorio central de Umbra Dynamics. Registros confidenciales de personal, facciones y protocolos operativos.
         </p>
 
-        <!-- Botón para avanzar -->
-        <button class="btn-decrypt" onclick="descifrarBoveda()">Presiona para continuar<span class="blink">_</span></button>
+        <!-- Botón de entrada inicial -->
+        <button id="btn-initial" class="btn-decrypt" onclick="mostrarMenu()">PRESIONA PARA CONTINUAR</button>
 
-    <script>
-        function descifrarBoveda() {
-            alert("[SISTEMA]: Bypass del cortafuegos exitoso. Abriendo base de datos confidencial...");
-            // Aquí irá el puente con Firebase
-        }
-        <!-- Cargar librerías de Firebase desde la nube de Google -->
+        <!-- Menú secreto de 3 botones (se activa al dar clic arriba) -->
+        <div id="menu-container" class="menu-options">
+            <button class="btn-decrypt" onclick="mostrarSeccion('sobre-nosotros')">Sobre Nosotros</button>
+            <button class="btn-decrypt" onclick="mostrarSeccion('quienes-somos')">Quiénes Somos</button>
+            <button class="btn-decrypt" onclick="accederArchivosSecretos()">Archivos Protegidos<span class="blink">_</span></button>
+        </div>
+    </div>
+
+    <!-- Cargar librerías de Firebase -->
     <script src="https://gstatic.com"></script>
     <script src="https://gstatic.com"></script>
     <script src="https://gstatic.com"></script>
     
-    <!-- Cargar tu archivo de lógica corporativa -->
     <script src="js/main.js"></script>
 
+    <script>
+        function mostrarMenu() {
+            // Ocultar botón inicial y cambiar textos
+            document.getElementById('btn-initial').style.display = 'none';
+            document.getElementById('main-title').innerText = "DIRECTORIO CENTRAL";
+            document.getElementById('main-text').innerText = "Seleccione el módulo de información corporativa que desea consultar.";
+            
+            // Mostrar los 3 nuevos botones elegantemente
+            document.getElementById('menu-container').style.display = 'flex';
+        }
 
+        function mostrarSeccion(tipo) {
+            if(tipo === 'sobre-nosotros') {
+                alert("[MANIFIESTO]: Fundada bajo el principio de evolución controlada. Umbra Dynamics opera en la frontera de la bio-tecnología avanzada.");
+            } else if(tipo === 'quienes-somos') {
+                alert("[PERSONAL]: Alto Mando Ejecutivo: Director V. // Jefe de Seguridad: Comandante Thorne.");
+            }
+        }
+    </script>
 </body>
 </html>
-
