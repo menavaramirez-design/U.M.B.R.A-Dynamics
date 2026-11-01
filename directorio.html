@@ -1,189 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UMBRA DYNAMICS // MAIN INTERFACE</title>
-    <style>
-        body {
-            background-color: #020406;
-            color: #00e5ff;
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            padding: 30px;
-            box-sizing: border-box;
-            letter-spacing: 1px;
-        }
-
-        /* Rejilla CRT analógica */
-        body::before {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%);
-            z-index: 100;
-            background-size: 100% 4px;
-            pointer-events: none;
-            opacity: 0.3;
-        }
-
-        header {
-            border-bottom: 1px solid rgba(0, 229, 255, 0.3);
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        h1 {
-            font-size: 1.4rem;
-            margin: 0;
-            text-transform: uppercase;
-            color: #fff;
-            text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
-        }
-
-        /* Menú de 3 Botones / Pestañas */
-        .menu-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .tab-btn {
-            background-color: transparent;
-            border: 1px solid rgba(0, 229, 255, 0.4);
-            color: #00e5ff;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-        }
-
-        .tab-btn.active, .tab-btn:hover {
-            background-color: #00e5ff;
-            color: #020406;
-            font-weight: bold;
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
-        }
-
-        /* Contenedores de las Secciones */
-        .section-content {
-            display: none; /* Ocultas por defecto */
-            max-width: 1000px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        .section-content.active {
-            display: block; /* Solo se muestra la activa */
-        }
-
-        .corporate-text {
-            background-color: rgba(2, 9, 15, 0.8);
-            border: 1px dashed rgba(0, 229, 255, 0.2);
-            padding: 30px;
-            color: #b3f0ff;
-        }
-
-        /* Grid para las listas de líderes y archivos */
-        .grid-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            background-color: rgba(2, 9, 15, 0.8);
-            padding: 20px;
-        }
-
-        .card-name {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .status-tag {
-            display: inline-block;
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            background-color: rgba(0, 229, 255, 0.1);
-            border: 1px solid #00e5ff;
-            margin-top: 15px;
-            text-transform: uppercase;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UMBRA DYNAMICS // CLASSIFIED DIRECTORY</title>
+<link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
-
-    <header>
-        <div>
-            <h1>Terminal Central // Umbra Dynamics</h1>
-            <span style="font-size: 0.75rem; color: rgba(0,229,255,0.6);">SISTEMA DE MONITOREO DE EXPEDIENTES</span>
-        </div>
-        <div style="color: #66ff99;">[ ONLINE ]</div>
-    </header>
-
-    <!-- La botonera principal de 3 opciones -->
-    <div class="menu-tabs">
-        <button class="tab-btn active" onclick="cambiarPestaña('sobre-nosotros')">Sobre Nosotros</button>
-        <button class="tab-btn" onclick="cambiarPestaña('quienes-somos')">Quiénes Somos</button>
-        <button class="tab-btn" onclick="cambiarPestaña('archivos-secretos')">Archivos Clasificados</button>
+<body data-pagina="directorio">
+  <header>
+    <div>
+      <h1>Directorio Secreto // Archivos Clasificados</h1>
+      <span class="sub">NIVEL DE ACCESO: RESTRINGIDO (NIVEL 5)</span>
     </div>
-
-    <!-- SECCIÓN 1: SOBRE NOSOTROS -->
-    <div id="sobre-nosotros" class="section-content active">
-        <div class="corporate-text">
-            <h3>MANIFIESTO CORPORATIVO // PROYECTO ORIGEN</h3>
-            <p>Fundada bajo el principio de evolución controlada, Umbra Dynamics opera en la frontera de la bio-tecnología avanzada, la manipulación cuántica de datos y el despliegue de soluciones tácticas globales.</p>
-            <p>Nuestra misión pública es el desarrollo de infraestructuras energéticas estables, pero nuestros verdaderos esfuerzos se concentran en asegurar la supervivencia y el liderazgo de las facciones autorizadas ante cualquier escenario de contingencia global.</p>
-        </div>
+    <div>
+      <div class="verificado">[ AUTENTICACIÓN: VERIFICADA ]</div>
+      <div class="sub" id="agente"></div>
+      <div class="barra">
+        <button class="btn suave" id="btn-sonido">SONIDO: OFF</button>
+        <button class="btn suave" id="btn-salir">SALIR</button>
+      </div>
     </div>
-
-    <!-- SECCIÓN 2: QUIÉNES SOMOS (Líderes) -->
-    <div id="quienes-somos" class="section-content">
-        <div class="grid-cards">
-            <div class="card">
-                <div class="card-name">Director Ejecutivo V.</div>
-                <div><strong>Rango:</strong> Alto Mando / Fundador<br><strong>Estado:</strong> Activo<br>Supervisa el desarrollo global del proyecto.</div>
-            </div>
-            <div class="card">
-                <div class="card-name">Comandante Thorne</div>
-                <div><strong>Rango:</strong> Jefe de Seguridad<br><strong>Estado:</strong> En Operaciones<br>Encargado de contener las brechas e infiltraciones.</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SECCIÓN 3: ARCHIVOS SECRETOS (Los que protegiste con clave) -->
-    <div id="archivos-secretos" class="section-content">
-        <div class="grid-cards" style="border: 1px solid #ff3366; padding: 20px; background: rgba(255,51,102,0.05);">
-            <div class="card" style="border-color: #ff3366;">
-                <div class="card-name" style="color: #ff3366;">PROYECTO: ÉBANO</div>
-                <div style="color: #ffb3c1;"><strong>Clasificación:</strong> Nivel 5<br>Datos encriptados sobre el desarrollo del virus molecular y la mutación controlada de los especímenes.</div>
-                <div class="status-tag" style="border-color: #ff3366; color: #ff3366;">CONFIDENCIAL</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Lógica en JS para alternar las secciones sin recargar la página -->
-    <script>
-        function cambiarPestaña(idSeccion) {
-            // Desactivar todas las secciones y botones
-            document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-
-            // Activar la pestaña y el botón seleccionado
-            document.getElementById(idSeccion).classList.add('active');
-            event.target.classList.add('active');
-        }
-    </script>
-
+  </header>
+  <h2>TU EXPEDIENTE</h2>
+  <main class="rejilla" id="mi-expediente"></main>
+  <h2>ARCHIVOS DE UMBRA</h2>
+  <main class="rejilla" id="archivos"></main>
+  <script src="js/datos.js"></script>
+  <script src="js/app.js"></script>
+  <script>directorio();</script>
 </body>
 </html>
