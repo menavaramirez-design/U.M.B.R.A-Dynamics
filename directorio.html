@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMBRA DYNAMICS // CLASSIFIED DIRECTORY</title>
+    <style>
+        body {
+            background-color: #020406;
+            color: #00e5ff;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 30px;
+            box-sizing: border-box;
+            letter-spacing: 1px;
+            animation: flicker 0.15s infinite;
+        }
+
+        /* Rejilla CRT analógica */
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%);
+            z-index: 100;
+            background-size: 100% 4px;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        header {
+            border-bottom: 1px solid rgba(0, 229, 255, 0.3);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sys-status {
+            font-size: 0.8rem;
+            color: #66ff99; /* Verde de sistema online */
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            margin: 0;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+        }
+
+        /* Grid de Fichas de Personajes */
+        .grid-expedientes {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card-personaje {
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            background-color: rgba(2, 9, 15, 0.8);
+            padding: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .card-personaje:hover {
+            border-color: #00e5ff;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            font-size: 0.75rem;
+            color: rgba(0, 229, 255, 0.5);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .card-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 0 15px 0;
+        }
+
+        .card-data {
+            font-size: 0.85rem;
+            color: #b3f0ff;
+            line-height: 1.6;
+        }
+
+        .status-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            background-color: rgba(0, 229, 255, 0.1);
+            border: 1px solid #00e5ff;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.99; } 50% { opacity: 1; } 100% { opacity: 0.98; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>Directorio Central // Personal</h1>
+            <span style="font-size: 0.75rem; color: rgba(0,229,255,0.6);">NIVEL DE ACCESO: RESTRINGIDO</span>
+        </div>
+        <div class="sys-status">[ SEGURIDAD BYPASS: ACTIVE ]</div>
+    </header>
+
+    <main class="grid-expedientes">
+        <!-- Ejemplo de Ficha 1 -->
+        <div class="card-personaje">
+            <div class="card-header">ID: #UD-0941</div>
+            <div class="card-name">Aleksei Vance</div>
+            <div class="card-data">
+                <strong>Rol:</strong> Líder de Facción<br>
+                <strong>Especialidad:</strong> Operaciones Tácticas<br>
+                <strong>Ubicación:</strong> Sector Norte (Infiltrado)
+            </div>
+            <div class="status-tag">Bajo Observación</div>
+        </div>
+
+        <!-- Ejemplo de Ficha 2 -->
+        <div class="card-personaje">
+            <div class="card-header">ID: #UD-1102</div>
+            <div class="card-name">Dra. Elyra Thorne</div>
+            <div class="card-data">
+                <strong>Rol:</strong> Científico Jefe<br>
+                <strong>Especialidad:</strong> Bio-Ingeniería Molecular<br>
+                <strong>Ubicación:</strong> Laboratorio Subterráneo
+            </div>
+            <div class="status-tag" style="border-color: #ff3366; color: #ff3366; background: rgba(255,51,102,0.1);">DESCONOCIDO</div>
+        </div>
+    </main>
+
+</body>
+</html>

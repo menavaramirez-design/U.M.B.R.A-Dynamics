@@ -28,7 +28,7 @@ function descifrarBoveda() {
             alert("[SISTEMA]: Acceso Concedido. Bienvenido Agente, " + user.displayName);
             
             // Aquí redirigiremos al directorio secreto de personajes en el siguiente paso
-            // window.location.href = "directorio.html";
+            window.location.href = "directorio.html";
         })
         .catch((error) => {
             console.error("[ERROR]: Autenticación fallida o cancelada.", error);
