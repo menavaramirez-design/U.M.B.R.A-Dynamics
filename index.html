@@ -18,7 +18,6 @@
             letter-spacing: 2px;
         }
 
-        /* Rejilla de monitor antiguo */
         body::before {
             content: " ";
             display: block;
@@ -34,9 +33,9 @@
         .vault-box {
             border: 1px solid rgba(0, 229, 255, 0.4);
             background-color: rgba(2, 9, 15, 0.95);
-            padding: 45px;
+            padding: 40px;
             width: 480px;
-            min-height: 350px;
+            min-height: 420px;
             box-shadow: 0 0 35px rgba(0, 229, 255, 0.1);
             position: relative;
             z-index: 20;
@@ -49,13 +48,13 @@
             font-size: 0.75rem;
             color: rgba(0, 229, 255, 0.6);
             text-transform: uppercase;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             letter-spacing: 4px;
             text-align: center;
         }
 
         .content-area {
-            text-align: left;
+            text-align: center;
             flex-grow: 1;
         }
 
@@ -63,11 +62,10 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: #ffffff;
-            margin: 0 0 20px 0;
+            margin: 10px 0 20px 0;
             text-transform: uppercase;
             letter-spacing: 4px;
             text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
-            text-align: center;
         }
 
         p, .info-block {
@@ -75,6 +73,35 @@
             line-height: 1.7;
             color: #b3f0ff;
             margin-bottom: 25px;
+            text-align: left;
+        }
+
+        /* DISEÑO DE IMÁGENES CON ESTILO CIBERNÉTICO */
+        .corp-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 10px auto;
+            border: 1px dashed #00e5ff;
+            padding: 5px;
+            object-fit: cover;
+        }
+
+        .leader-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            padding: 10px;
+            background: rgba(0, 229, 255, 0.02);
+        }
+
+        .leader-img {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #00e5ff;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(120%); /* Efecto foto de archivo militar */
         }
 
         .btn-decrypt {
@@ -129,6 +156,9 @@
         <div class="system-tag" id="sys-tag">[ CONEXIÓN ANÓNIMA ESTABLECIDA ]</div>
         
         <div class="content-area">
+            <!-- IMAGEN: LOGO DE INICIO (Puedes cambiar el link de abajo por tu logo) -->
+            <img id="main-logo" class="corp-logo" src="https://unsplash.com" alt="UD Logo">
+            
             <h1 id="main-title">U.M.B.R.A. DYNAMICS</h1>
             
             <div id="dynamic-content">
@@ -137,12 +167,10 @@
         </div>
 
         <div class="actions-area">
-            <!-- Botón de entrada inicial -->
             <button id="btn-initial" class="btn-decrypt" onclick="mostrarMenu()">
                 PRESIONA PARA CONTINUAR
             </button>
 
-            <!-- Opciones del menú (inician ocultas) -->
             <div id="menu-container">
                 <button class="btn-decrypt" onclick="cargarSeccion('sobre-nosotros')">Sobre Nosotros</button>
                 <button class="btn-decrypt" onclick="cargarSeccion('quienes-somos')">Quiénes Somos</button>
@@ -151,7 +179,6 @@
         </div>
     </div>
 
-    <!-- Motores de Firebase y lógica externa -->
     <script src="https://gstatic.com"></script>
     <script src="https://gstatic.com"></script>
     <script src="https://gstatic.com"></script>
@@ -160,6 +187,7 @@
     <script>
         function mostrarMenu() {
             document.getElementById('btn-initial').style.display = 'none';
+            document.getElementById('main-logo').style.display = 'none'; // Escondemos el logo grande en el menú
             document.getElementById('sys-tag').innerText = "[ MENU PRINCIPAL SELECCIONADO ]";
             document.getElementById('main-title').innerText = "DIRECTORIO CENTRAL";
             document.getElementById('dynamic-content').innerHTML = "<p>Seleccione el módulo de información corporativa que desea consultar en la terminal.</p>";
@@ -168,7 +196,6 @@
 
         function cargarSeccion(tipo) {
             document.getElementById('menu-container').style.display = 'none';
-            
             let htmlContenido = "";
             
             if(tipo === 'sobre-nosotros') {
@@ -176,30 +203,42 @@
                 document.getElementById('main-title').innerText = "SOBRE NOSOTROS";
                 htmlContenido = `
                     <div class="info-block">
-                        Fundada bajo el principio de evolución controlada. Umbra Dynamics opera en la frontera de la bio-tecnología avanzada, manipulación cuántica de datos y el despliegue de soluciones tácticas globales.
+                        Umbra Dynamics opera en la frontera de la bio-tecnología avanzada y el despliegue de soluciones tácticas globales.
                         <div class="sub-text">// OBJETIVO: Preservar la supremacía de los líderes de facción ante escenarios de colapso planetario.</div>
                     </div>
                 `;
             } else if(tipo === 'quienes-somos') {
                 document.getElementById('sys-tag').innerText = "[ EXPEDIENTE // ORGANIGRAMA ]";
                 document.getElementById('main-title').innerText = "ALTO MANDO";
+                
+                // AQUÍ SE INTEGRAN LAS IMÁGENES DE LOS LÍDERES (Reemplaza los links en 'src')
                 htmlContenido = `
                     <div class="info-block">
-                        • <strong>DIRECTOR V.</strong><br>
-                        [Estatus: Activo] // Fundador de la Iniciativa Umbra.<br><br>
-                        • <strong>COMANDANTE THORNE</strong><br>
-                        [Estatus: En Operaciones] // Dirección de Seguridad de Facción.
+                        <div class="leader-profile">
+                            <img class="leader-img" src="https://i.pinimg.com/736x/50/1d/0a/501d0a4b4013ddb28dec7591c1543073.jpg" alt="Director V.">
+                            <div>
+                                <strong>DIRECTOR V.</strong><br>
+                                <span style="font-size:0.75rem; color:rgba(0,229,255,0.6);">[Estatus: Activo] // Fundador</span>
+                            </div>
+                        </div>
+                        
+                        <div class="leader-profile">
+                            <img class="leader-img" src="https://i.pinimg.com/736x/d9/94/dc/d994dcad55ce5ac6b20a80141c8619e8.jpg" alt="Cdr. Thorne">
+                            <div>
+                                <strong>COMANDANTE THORNE</strong><br>
+                                <span style="font-size:0.75rem; color:rgba(0,229,255,0.6);">[Estatus: En Operaciones] // Seguridad</span>
+                            </div>
+                        </div>
                     </div>
                 `;
             }
             
-            // Añadir el botón para volver al menú de opciones
             htmlContenido += `<button class="btn-decrypt btn-back" onclick="mostrarMenu()">◀ VOLVER AL MENU</button>`;
             document.getElementById('dynamic-content').innerHTML = htmlContenido;
         }
     </script>
-
 </body>
 </html>
+
 
 
