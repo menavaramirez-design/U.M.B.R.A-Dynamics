@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMBRA DYNAMICS // SECURE VAULT</title>
     <style>
-        /* Fondo negro puro y tipografía de terminal hacker */
         body {
             background-color: #020406;
-            color: #00e5ff; /* Azul cian brillante */
+            color: #00e5ff;
             font-family: 'Courier New', Courier, monospace;
             display: flex;
             justify-content: center;
@@ -17,50 +16,30 @@
             margin: 0;
             overflow: hidden;
             letter-spacing: 2px;
-            animation: flicker 0.15s infinite; /* Parpadeo sutil analógico */
         }
 
-        /* REJILLA DE MONITOR VIEJO CRT (Scanlines + Grid) */
+        /* Rejilla de monitor antiguo */
         body::before {
             content: " ";
             display: block;
             position: absolute;
             top: 0; left: 0; bottom: 0; right: 0;
-            background: 
-                linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%), 
-                linear-gradient(90deg, rgba(0, 229, 255, 0.03), rgba(0, 0, 0, 0.1), rgba(0, 229, 255, 0.03));
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%);
             z-index: 100;
-            background-size: 100% 4px, 6px 100%;
+            background-size: 100% 4px;
             pointer-events: none;
-            opacity: 0.8;
+            opacity: 0.6;
         }
 
         .vault-box {
             border: 1px solid rgba(0, 229, 255, 0.4);
             background-color: rgba(2, 9, 15, 0.95);
             padding: 45px;
-            max-width: 460px;
+            width: 450px;
             text-align: center;
             box-shadow: 0 0 35px rgba(0, 229, 255, 0.1);
             position: relative;
             z-index: 20;
-        }
-
-        /* MARCA DE AGUA / LOGO CENTRAL DE UMBRA DYNAMICS */
-        .umbra-logo {
-            font-size: 4rem;
-            font-weight: 900;
-            color: rgba(0, 229, 255, 0.05); /* Muy sutil en el fondo del cuadro */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            letter-spacing: 15px;
-            z-index: -1;
-            pointer-events: none;
-            user-select: none;
-            border: 4px double rgba(0, 229, 255, 0.03);
-            padding: 10px 0 10px 15px;
         }
 
         .system-tag {
@@ -88,23 +67,6 @@
             margin-bottom: 35px;
         }
 
-        .blink {
-            animation: parpadeo 1.2s infinite;
-        }
-
-        /* Animaciones analógicas */
-        @keyframes parpadeo {
-            0%, 49% { opacity: 1; }
-            50%, 100% { opacity: 0; }
-        }
-
-        @keyframes flicker {
-            0% { opacity: 0.99; }
-            50% { opacity: 1; }
-            100% { opacity: 0.98; }
-        }
-
-        /* Botón de la terminal */
         .btn-decrypt {
             background-color: transparent;
             border: 1px solid #00e5ff;
@@ -117,6 +79,7 @@
             cursor: pointer;
             width: 100%;
             transition: all 0.3s ease;
+            margin-bottom: 12px;
         }
 
         .btn-decrypt:hover {
@@ -125,39 +88,46 @@
             box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
             font-weight: bold;
         }
+
+        /* El contenedor del menú inicia completamente oculto */
+        #menu-container {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
     <div class="vault-box">
-        <!-- Logo central oculto tras el texto -->
-        <div class="umbra-logo">UD</div>
-
         <div class="system-tag">[ CONEXIÓN ANÓNIMA ESTABLECIDA ]</div>
         
-        <h1>Archivos Clasificados</h1>
+        <h1 id="main-title">U.M.B.R.A. DYNAMICS</h1>
         
-        <p>
+        <p id="main-text">
             Acceso restringido al directorio central de Umbra Dynamics. Registros confidenciales de personal, facciones y protocolos operativos.
         </p>
 
-        <!-- Botón para avanzar -->
-        <button class="btn-decrypt" onclick="descifrarBoveda()">Descifrar Directorio<span class="blink">_</span></button>
+        <!-- Botón de entrada inicial con función directa -->
+        <button id="btn-initial" class="btn-decrypt" onclick="document.getElementById('btn-initial').style.display='none'; document.getElementById('main-title').innerText='DIRECTORIO CENTRAL'; document.getElementById('main-text').innerText='Seleccione el módulo de información corporativa que desea consultar.'; document.getElementById('menu-container').style.display='flex';">
+            PRESIONA PARA CONTINUAR
+        </button>
+
+        <!-- Opciones ocultas del menú -->
+        <div id="menu-container">
+            <button class="btn-decrypt" onclick="alert('[MANIFIESTO]: Fundada bajo el principio de evolución controlada. Umbra Dynamics opera en la frontera de la bio-tecnología avanzada.')">Sobre Nosotros</button>
+            <button class="btn-decrypt" onclick="alert('[PERSONAL SCOUT]: Alto Mando Ejecutivo: Director V. // Jefe de Seguridad: Comandante Thorne.')">Quiénes Somos</button>
+            <button class="btn-decrypt" onclick="accederArchivosSecretos()">Archivos Protegidos_</button>
+        </div>
     </div>
 
-    <script>
-        function descifrarBoveda() {
-            alert("[SISTEMA]: Bypass del cortafuegos exitoso. Abriendo base de datos confidencial...");
-            // Aquí irá el puente con Firebase
-        }
-        <!-- Cargar librerías de Firebase desde la nube de Google -->
+    <!-- Motores de Firebase y lógica externa -->
     <script src="https://gstatic.com"></script>
     <script src="https://gstatic.com"></script>
     <script src="https://gstatic.com"></script>
-    
-    <!-- Cargar tu archivo de lógica corporativa -->
     <script src="js/main.js"></script>
-
 
 </body>
 </html>
+
