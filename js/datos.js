@@ -25,7 +25,7 @@ const UMBRA = {
           ["ADRIAN KELLER", "JEFE DE INVESTIGACIÓN", "EN OPERACIÓN"]
         ]},
         { nombre: "DIVISIÓN MÉDICA Y CIENTÍFICA", columnas: ["PERSONAL", "CARGO", "ESTATUS"], filas: [
-          ["DRA. ALISTAIR VOSS", "DIRECTORA MÉDICA", "ACTIVO"],
+          ["DRA. HELENA WEISS", "DIRECTORA MÉDICA", "ACTIVO"],
           ["DR. NATHANIEL CROSS", "INVESTIGADOR PRINCIPAL", "EN OPERACIÓN"],
           ["MIRIAM FOSTER", "TÉCNICA DE LABORATORIO", "ACTIVO"]
         ]},
@@ -64,22 +64,24 @@ const UMBRA = {
     {
       id: "ELENA.GRAVES", clave: "MEMENTO.MORI_731",
       expediente: {
-        nombre: "Rubén Doblas Gürdensen", 
+        nombre: "Rubén Doblas Gürdensen",
         foto: "",
         alias: "land uten minner",
         nivelAmenaza: "POR DEFINIR",
         estado: "Experimento...¿Fallido?",
         resumen: `El sujeto de pruebas con el paso de los años, demostró ser un buen experimento hasta el momento. Pero todo cambio desde que comenzó a estar rodeado de supuestos "amigos".
+
 Rubén conforme avanzo la infección demostró una resistencia a portarlo, pero, igualmente se puede infectar, hemos intentado en más de una ocasión hacer que el virus entre en su sistema, pero hemos fallado...Es un maldito afortunado.
-Estuvimos bastante cerca cuando el trio de amigos decidió formar cada uno una faccion, pobres, terminaron muy heridos unos con otros. En especial con ese chico Aquino, rechazar su amor correspondido, dan lástima...Es tan divertido, Umbra se divierte viendo como el oso lamenta cada día su rechazo, ¿Que opinará ese chico al saber la verdad del porque fue rechazado? 
+
+Estuvimos bastante cerca cuando el trio de amigos decidió formar cada uno una faccion, pobres, terminaron muy heridos unos con otros. En especial con ese chico Aquino, rechazar su amor correspondido, dan lástima...Es tan divertido, Umbra se divierte viendo como el oso lamenta cada día su rechazo, ¿Que opinará ese chico al saber la verdad del porque fue rechazado?
 
 El oso es el sujeto perfecto para corromper en este momento, la perdida de la memoria nos favorece en mayoría para futuros experimentos, probablemente gracias a el, aumentemos la efectividad del virus. Seguiremos investigando el avance de su amnesia, las cosas van a nuestro favor.
-Rubén en su misma estupida ignorancia será el caballo de troya, las perdidas que ha tenido y seguirá teniendo, nos hará tener un mejor rendimiento en cuanto a la evolución del experimento.
-La faccion que maneja le da cierta "ventaja" los infectados no logran llegar hasta el y su gente, es un maldito semi animal que busca solo esconderse de sus penas y su dolor, que lamentable debe ser. Seguiremos divirtiéndonos de su miseria por un tiempo más, mientras aún nos parezca divertido, nuestra paciencia es poca y limitada, si falla, como lo han hecho experimentos anteriores, nos encargaremos de desecharlo o eliminarlo.`,
 
+Rubén en su misma estupida ignorancia será el caballo de troya, las perdidas que ha tenido y seguirá teniendo, nos hará tener un mejor rendimiento en cuanto a la evolución del experimento.
+
+La faccion que maneja le da cierta "ventaja" los infectados no logran llegar hasta el y su gente, es un maldito semi animal que busca solo esconderse de sus penas y su dolor, que lamentable debe ser. Seguiremos divirtiéndonos de su miseria por un tiempo más, mientras aún nos parezca divertido, nuestra paciencia es poca y limitada, si falla, como lo han hecho experimentos anteriores, nos encargaremos de desecharlo o eliminarlo.`,
         notas: [
- notas: [
-          "Dato: La lamentable vida del sujeto de pruebas nos favorece, seguiremos vigilando y siendo pacientes, pero no por mucho tiempo.",
+          "Datos: La lamentable vida del sujeto de pruebas nos favorece, seguiremos vigilando y siendo pacientes, pero no por mucho tiempo.",
           "Encontramos divertida su vida, ponerle algo que lo haga sufrir y guarde todo, nos parece gracioso.",
           "Notamos cierro acercamiento a Aquino y a una semi criatura enderman, sigue bajo investigación la cercania que tiene hacia ellos.",
           "Tuvo una perdida reciente de unonde sus hijos, aprovecharemos la vulnerabilidad que se presente en dias futuros y los momentos solitarios del sujeto de pruebas.",
@@ -92,9 +94,9 @@ La faccion que maneja le da cierta "ventaja" los infectados no logran llegar has
       expediente: {
         nombre: "Avery Green Brook",
         foto: "",
-        alias: "",
+        alias: "The Failed Vessel",
         nivelAmenaza: "POR DEFINIR",
-        estado: "Experimento fallido",
+        estado: "Experimento en curso",
         resumen: `Avery es, sin duda, una de las mayores decepciones que hemos tenido que documentar.
 
 Se le presentó una oportunidad que cualquier otro sujeto habría aprovechado. Una posibilidad de trascender su insignificante existencia y convertirse en algo verdaderamente extraordinario. ¿Y qué hizo con ella?
