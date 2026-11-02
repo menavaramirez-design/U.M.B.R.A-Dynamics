@@ -46,8 +46,12 @@ const UMBRA = {
     {
       id: "Alistair-Voss", clave: "lasciate_ogni_speranza",
       expediente: {
-        nombre: "Avery Green Brook", foto: "", alias: "El recipiente fallido", nivelAmenaza: "CRÍTICO",
-        estado: "Objetivo prioritario", resumen: "Avery es, sin duda, una de las mayores decepciones que hemos tenido que documentar.
+        nombre: "Avery Green Brook",
+        foto: "",
+        alias: "",
+        nivelAmenaza: "POR DEFINIR",
+        estado: "Experimento en curso",
+        resumen: `Avery es, sin duda, una de las mayores decepciones que hemos tenido que documentar.
 
 Se le presentó una oportunidad que cualquier otro sujeto habría aprovechado. Una posibilidad de trascender su insignificante existencia y convertirse en algo verdaderamente extraordinario. ¿Y qué hizo con ella?
 
@@ -73,12 +77,12 @@ Que quede registrado: nuestra paciencia se está agotando.
 
 Si no es capaz de cumplir con aquello para lo que resulta útil, encontraremos a alguien que sí lo sea.
 
-Y cuando eso ocurra, no habrá absolutamente nada que pueda hacer al respecto..",
-        notas: ["continúa decepcionándonos. Su resistencia resulta irritante y su incapacidad para comprender su propia condición es patética.
-
-No sentimos interés por su bienestar. Solo esperamos que deje de desperdiciar el potencial que se le ha concedido.
-
-Recuerden: Avery es un experimento, no una prioridad."]
+Y cuando eso ocurra, no habrá absolutamente nada que pueda hacer al respecto.`,
+        notas: [
+          "Dato: Continúa decepcionándonos. Su resistencia resulta irritante y su incapacidad para comprender su propia condición es patética.",
+          "No sentimos interés por su bienestar. Solo esperamos que deje de desperdiciar el potencial que se le ha concedido.",
+          "Recuerden: Avery es un experimento, no una prioridad."
+        ]
       }
     }
   ],

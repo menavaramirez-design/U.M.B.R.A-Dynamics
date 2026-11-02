@@ -116,7 +116,7 @@ function directorio() {
   const e = ag.expediente;
   const notas = e.notas && e.notas.length ? '<ul>' + e.notas.map(n => '<li>' + esc(n) + '</li>').join('') + '</ul>' : '';
   $('#mi-expediente').innerHTML = ficha('amenaza', 'EXPEDIENTE PERSONAL // AMENAZA: ' + e.nivelAmenaza, esc(e.nombre),
-    (e.alias ? '<strong>Alias:</strong> ' + esc(e.alias) + '<br>' : '') + '<strong>Estado:</strong> ' + esc(e.estado) + '<br><br>' + esc(e.resumen) + notas,
+    (e.alias ? '<strong>Alias:</strong> ' + esc(e.alias) + '<br>' : '') + '<strong>Estado:</strong> ' + esc(e.estado) + '<br><br>' + '<span class="resumen">' + esc(e.resumen) + '</span>' + notas,
     'OBJETIVO DE UMBRA', true, e.foto);
 
   $('#archivos').innerHTML = UMBRA.archivos.map(a => a.liberado
