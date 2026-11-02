@@ -97,8 +97,12 @@ async function arranque() {
 }
 
 /* --------------------------- DIRECTORIO ------------------------------ */
-function ficha(clase, cab, nombre, cuerpo, sello, rojo) {
-  return '<div class="ficha ' + clase + '"><div class="cab">' + esc(cab) + '</div><div class="nombre">' + nombre + '</div>' +
+function imgHTML(src) {
+  if (!src) return '';
+  return '<img class="foto" src="' + String(src).replace(/"/g, '&quot;') + '" alt="" loading="lazy" onerror="this.remove()">';
+}
+function ficha(clase, cab, nombre, cuerpo, sello, rojo, img) {
+  return '<div class="ficha ' + clase + '"><div class="cab">' + esc(cab) + '</div>' + imgHTML(img) + '<div class="nombre">' + nombre + '</div>' +
     '<div class="datos">' + cuerpo + '</div>' + (sello ? '<div class="sello' + (rojo ? ' rojo' : '') + '">' + esc(sello) + '</div>' : '') + '</div>';
 }
 function directorio() {
@@ -113,10 +117,10 @@ function directorio() {
   const notas = e.notas && e.notas.length ? '<ul>' + e.notas.map(n => '<li>' + esc(n) + '</li>').join('') + '</ul>' : '';
   $('#mi-expediente').innerHTML = ficha('amenaza', 'EXPEDIENTE PERSONAL // AMENAZA: ' + e.nivelAmenaza, esc(e.nombre),
     (e.alias ? '<strong>Alias:</strong> ' + esc(e.alias) + '<br>' : '') + '<strong>Estado:</strong> ' + esc(e.estado) + '<br><br>' + esc(e.resumen) + notas,
-    'OBJETIVO DE UMBRA', true);
+    'OBJETIVO DE UMBRA', true, e.foto);
 
   $('#archivos').innerHTML = UMBRA.archivos.map(a => a.liberado
-    ? ficha(a.critico ? 'amenaza' : '', a.codigo, esc(a.titulo), '<strong>Clasificación:</strong> ' + esc(a.clasificacion) + '<br>' + esc(a.detalle), a.estado, a.critico)
+    ? ficha(a.critico ? 'amenaza' : '', a.codigo, esc(a.titulo), '<strong>Clasificación:</strong> ' + esc(a.clasificacion) + '<br>' + esc(a.detalle), a.estado, a.critico, a.imagen)
     : ficha('bloq', a.codigo, '<span class="tachado">████████████</span>', '<span class="tachado">██████ ████ ██████</span> ██████ ███', 'ACCESO RESTRINGIDO', true)
   ).join('');
   glitch($('header h1'));

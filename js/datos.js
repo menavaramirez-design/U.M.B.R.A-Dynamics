@@ -3,6 +3,8 @@
    Reglas para no romperlo:
    - Respeta las comillas "así" y las comas al final de cada línea.
    - Para LIBERAR un archivo de Umbra, cambia  liberado:false  por  liberado:true
+   - IMÁGENES: sube el archivo a la carpeta img/ y escribe su ruta en foto: o imagen:
+     (ej: foto: "img/lider1.jpg"). Si lo dejas "" no se muestra nada.
    - Cada cambio se guarda en GitHub (Commit changes) y en 1-2 minutos
      los jugadores lo ven al recargar la página.
    ===================================================================== */
@@ -25,6 +27,7 @@ const UMBRA = {
       id: "AGENTE-01", clave: "cambia-esta-clave-1",
       expediente: {
         nombre: "NOMBRE DEL LÍDER 1",
+        foto: "",   // ej: "img/lider1.jpg" (déjalo "" si no hay foto)
         alias: "Alias conocido por Umbra",
         nivelAmenaza: "ALTO",
         estado: "Paradero desconocido",
@@ -35,7 +38,7 @@ const UMBRA = {
     {
       id: "AGENTE-02", clave: "cambia-esta-clave-2",
       expediente: {
-        nombre: "NOMBRE DEL LÍDER 2", alias: "", nivelAmenaza: "ALTO",
+        nombre: "NOMBRE DEL LÍDER 2", foto: "", alias: "", nivelAmenaza: "ALTO",
         estado: "Bajo vigilancia", resumen: "Escribe aquí lo que Umbra sabe de este líder.",
         notas: ["Nota de Umbra 1."]
       }
@@ -43,7 +46,7 @@ const UMBRA = {
     {
       id: "AGENTE-03", clave: "cambia-esta-clave-3",
       expediente: {
-        nombre: "NOMBRE DEL LÍDER 3", alias: "", nivelAmenaza: "CRÍTICO",
+        nombre: "NOMBRE DEL LÍDER 3", foto: "", alias: "", nivelAmenaza: "CRÍTICO",
         estado: "Objetivo prioritario", resumen: "Escribe aquí lo que Umbra sabe de este líder.",
         notas: ["Nota de Umbra 1."]
       }
@@ -56,13 +59,13 @@ const UMBRA = {
       codigo: "PROYECTO: ÉBANO", titulo: "Manifiesto del Virus Molecular",
       clasificacion: "Nivel 5 / Alto Secreto",
       detalle: "Muestras aisladas obtenidas del Sector Norte. Reportes indican mutación celular acelerada y comportamiento hostil en los especímenes.",
-      estado: "BLOQUEADO // BAJO ESTUDIO", critico: true, liberado: false
+      imagen: "", estado: "BLOQUEADO // BAJO ESTUDIO", critico: true, liberado: false
     },
     {
       codigo: "REGISTRO: #UD-992", titulo: "Bitácora de Incidente - Sector 4",
       clasificacion: "Nivel 4",
       detalle: "Falla en los reactores cuánticos principales provocó una brecha temporal de 42 segundos. Protocolo de limpieza ejecutado con éxito.",
-      estado: "REGISTRO ARCHIVADO", critico: false, liberado: false
+      imagen: "", estado: "REGISTRO ARCHIVADO", critico: false, liberado: false
     }
   ]
 };

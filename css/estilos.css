@@ -35,6 +35,8 @@ h2{font-size:.9rem;color:rgba(0,229,255,.7);letter-spacing:3px;max-width:1200px;
 .datos ul{padding-left:18px;margin:8px 0 0}
 .sello{display:inline-block;font-size:.7rem;padding:2px 6px;border:1px solid var(--cian);margin-top:12px;background:rgba(0,229,255,.1)}
 .sello.rojo{border-color:var(--rojo);color:var(--rojo);background:rgba(255,51,102,.1)}
+.foto{display:block;width:100%;max-height:260px;object-fit:cover;border:1px solid var(--cian-suave);margin-bottom:12px;filter:grayscale(.5) contrast(1.1) sepia(.3) hue-rotate(150deg);transition:filter .3s}
+.foto:hover{filter:none}
 .tachado{background:var(--texto);color:var(--texto);user-select:none}
 @media(max-width:520px){.caja{padding:22px}body{padding:12px}h1{font-size:1.15rem;letter-spacing:2px}}
 @media(prefers-reduced-motion:reduce){.glitch,.titulo-glitch{animation:none}}
