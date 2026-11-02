@@ -34,6 +34,7 @@ const norm = t => (t || '').trim().toLowerCase();
 
 /* ------------------------- PÁGINA DE ENTRADA ------------------------- */
 async function vista(etiqueta, titulo, texto, extraHTML, botones) {
+  $('.caja').classList.remove('ancha');
   $('#etiqueta').textContent = etiqueta;
   const h = $('#titulo'); h.textContent = titulo; glitch(h);
   $('#acciones').innerHTML = '';
@@ -58,9 +59,17 @@ function sobreNosotros() {
   vista('[ EXPEDIENTE // MANIFIESTO ]', 'SOBRE NOSOTROS', UMBRA.publico.sobreNosotros + '\n\n' + UMBRA.publico.objetivo, '',
     [{ t: '◀ VOLVER AL MENÚ', fn: menu, suave: true }]);
 }
+function tablaPersonal(sec) {
+  const th = sec.columnas.map(c => '<th>' + esc(c) + '</th>').join('');
+  const tr = sec.filas.map(f => '<tr>' + f.map(c => '<td>' + esc(c) + '</td>').join('') + '</tr>').join('');
+  return '<h3>' + esc(sec.nombre) + '</h3><table><thead><tr>' + th + '</tr></thead><tbody>' + tr + '</tbody></table>';
+}
 function altoMando() {
-  const txt = UMBRA.publico.altoMando.map(p => '• ' + p.nombre + '\n  [Estatus: ' + p.estatus + '] // ' + p.rol).join('\n\n');
-  vista('[ EXPEDIENTE // ORGANIGRAMA ]', 'ALTO MANDO', txt, '', [{ t: '◀ VOLVER AL MENÚ', fn: menu, suave: true }]);
+  const r = UMBRA.publico.altoMando;
+  vista('[ REGISTRO INTERNO ]', 'ALTO MANDO', r.titulo,
+    '<div class="tabla-scroll">' + r.secciones.map(tablaPersonal).join('') + '</div>',
+    [{ t: '◀ VOLVER AL MENÚ', fn: menu, suave: true }]);
+  $('.caja').classList.add('ancha');
 }
 function pedirClave() {
   vista('[ AUTENTICACIÓN REQUERIDA ]', 'SISTEMA ENCRIPTADO', 'El directorio de nivel 4/5 exige identificador de agente y código de desencriptación.',
