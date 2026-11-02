@@ -50,15 +50,41 @@ const UMBRA = {
   // id y clave: lo que escribe el jugador para entrar.
   agentes: [
     {
-      id: "AGENTE-01", clave: "cambia-esta-clave-1",
+      id: "Cross.Nathaniel_3", clave: "NOCTIS.AETERNA",
       expediente: {
-        nombre: "NOMBRE DEL LÍDER 1",
-        foto: "",   // ej: "img/lider1.jpg" (déjalo "" si no hay foto)
-        alias: "Alias conocido por Umbra",
-        nivelAmenaza: "ALTO",
-        estado: "Paradero desconocido",
-        resumen: "Escribe aquí lo que Umbra sabe de este líder.",
-        notas: ["Nota de Umbra 1.", "Nota de Umbra 2."]
+        nombre: "Diego Aquino Thorne",
+        foto: "",
+        alias: "Noctis",
+        nivelAmenaza: "POR DEFINIR",
+        estado: "Bajo observación... ¿Futura amenaza?",
+        resumen: `El sujeto Aquino ha demostrado ser un individuo bastante interesante durante los últimos años. A diferencia de otros sujetos, no hemos conseguido determinar si posee alguna característica que lo haga especialmente resistente al virus. Sin embargo, su capacidad para sobrevivir y mantener a otros bajo su liderazgo ha despertado nuestra curiosidad.
+
+Desde antes del colapso, Aquino mantenía una estrecha amistad con Rubén Doblas y Avery. Tres amigos que terminaron separándose y formando sus propias facciones. Qué lamentable... Aunque debemos admitir que fue bastante entretenido observar cómo aquella amistad terminó deteriorándose, especialmente después del pequeño incidente sentimental entre nuestro querido oso y Aquino.
+
+Pobre muchacho, entregar sus sentimientos y recibir semejante rechazo. Lo más divertido es que todavía desconoce la verdadera razón por la que Rubén decidió alejarse. ¿Qué sucederá cuando descubra la verdad? Nos encantaría observar su reacción.
+
+Con el paso de los años, Aquino consiguió formar una organización conocida como Los Oscuros, actualmente denominada La Élite. El sujeto parece tomarse demasiado en serio su responsabilidad como líder, llegando incluso a anteponer la seguridad de sus integrantes a sus propios intereses. Qué admirable... y qué estúpido. ¿Acaso cree que podrá protegerlos a todos?
+
+Hemos notado que Aquino procura mantener una actitud reservada, ocultando sus sentimientos detrás de aquella máscara. Sin embargo, no resulta demasiado complicado identificar sus debilidades. Su mayor problema siempre ha sido el mismo: encariñarse con las personas equivocadas.
+
+Actualmente, su segundo al mando es Ranboo, un individuo que parece haberse ganado completamente su confianza. También hemos identificado un acercamiento bastante particular hacia Duxo. Qué curioso... Después de lo ocurrido con Rubén, nuestro querido Aquino parece dispuesto a enamorarse nuevamente. Nos preguntamos si esta vez tendrá un final diferente.
+
+La pérdida de memoria de Rubén también ha resultado bastante conveniente para nuestras investigaciones. Aquino continúa preocupándose por él, a pesar de que el oso apenas recuerda parte de su pasado. Quizá podamos aprovechar esa situación más adelante. Después de todo, ¿qué mejor manera de debilitar a alguien que utilizando aquello que más le importa?
+
+Por ahora, no consideramos necesario intervenir directamente. Aquino no es un experimento confirmado, pero su influencia sobre La Élite podría convertirse en un problema para nuestros planes. Seguiremos observándolo mientras continúa creyendo que tiene el control de su propia vida.
+
+Qué ingenuo.
+
+Sería verdaderamente lamentable que, después de tantos esfuerzos por mantener unida a su organización, terminara perdiéndolo todo.`,
+        notas: [
+          "«El sujeto presenta una fuerte tendencia a proteger a sus allegados, incluso cuando esto podría ponerlo en peligro.»",
+          "«Notamos un acercamiento sentimental hacia Duxo. Seguiremos investigando hasta qué punto esta relación podría influir en sus decisiones.»",
+          "«Su vínculo con Rubén Doblas continúa siendo relevante. La amnesia del oso podría favorecer futuras operaciones.»",
+          "«La confianza depositada en Ranboo, su segundo al mando, representa un factor importante para la estabilidad de La Élite.»",
+          "«No hemos confirmado una infección en el sujeto. Se recomienda continuar vigilando su estado de salud y cualquier posible alteración.»",
+          "Recuerden: Mantengan vigilado a Aquino y a los integrantes de su facción. No necesitamos actuar todavía, pero tampoco podemos permitir que su influencia continúe creciendo sin supervisión.",
+          "Nos resulta divertido observar cómo intenta proteger a todos los que ama. Quizá algún día tengamos la oportunidad de demostrarle que ni siquiera él puede salvarlos de nosotros."
+        ]
       }
     },
     {
