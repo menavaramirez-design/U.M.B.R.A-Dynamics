@@ -44,11 +44,41 @@ const UMBRA = {
       }
     },
     {
-      id: "AGENTE-03", clave: "cambia-esta-clave-3",
+      id: "Alistair-Voss", clave: "lasciate_ogni_speranza",
       expediente: {
-        nombre: "NOMBRE DEL LÍDER 3", foto: "", alias: "", nivelAmenaza: "CRÍTICO",
-        estado: "Objetivo prioritario", resumen: "Escribe aquí lo que Umbra sabe de este líder.",
-        notas: ["Nota de Umbra 1."]
+        nombre: "Avery Green Brook", foto: "", alias: "El recipiente fallido", nivelAmenaza: "CRÍTICO",
+        estado: "Objetivo prioritario", resumen: "Avery es, sin duda, una de las mayores decepciones que hemos tenido que documentar.
+
+Se le presentó una oportunidad que cualquier otro sujeto habría aprovechado. Una posibilidad de trascender su insignificante existencia y convertirse en algo verdaderamente extraordinario. ¿Y qué hizo con ella?
+
+Resistirse.
+
+Aferrarse a su miserable humanidad como si todavía tuviera algún valor. Continúa jugando a ser un líder, dando órdenes, protegiendo a otros y creyendo que sus decisiones tienen alguna importancia.
+
+Qué espectáculo tan repulsivo.
+
+Su arrogancia resulta particularmente irritante. Camina entre los demás como si tuviera el control, como si su posición entre los Corruptos lo convirtiera en alguien importante. No comprende que ni siquiera es dueño de sí mismo.
+
+Y lo más vergonzoso es su incapacidad para aceptar aquello que lleva dentro.
+
+El Rey Amarillo le ha concedido una presencia que jamás habría podido alcanzar por sus propios medios, y aun así sigue oponiendo resistencia. Un recipiente imperfecto, una voluntad obstinada y una mente demasiado limitada para comprender la magnitud de lo que se le ha ofrecido.
+
+Nos resulta desagradable tener que seguir registrando sus constantes fracasos.
+
+Avery no es una víctima. Tampoco es un héroe.
+
+Es un individuo patético que insiste en creerse protagonista de una historia que nunca le perteneció.
+
+Que quede registrado: nuestra paciencia se está agotando.
+
+Si no es capaz de cumplir con aquello para lo que resulta útil, encontraremos a alguien que sí lo sea.
+
+Y cuando eso ocurra, no habrá absolutamente nada que pueda hacer al respecto..",
+        notas: ["continúa decepcionándonos. Su resistencia resulta irritante y su incapacidad para comprender su propia condición es patética.
+
+No sentimos interés por su bienestar. Solo esperamos que deje de desperdiciar el potencial que se le ha concedido.
+
+Recuerden: Avery es un experimento, no una prioridad."]
       }
     }
   ],
