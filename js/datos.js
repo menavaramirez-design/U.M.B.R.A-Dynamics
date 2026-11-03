@@ -5,6 +5,9 @@
    - Para LIBERAR un archivo de Umbra, cambia  liberado:false  por  liberado:true
    - IMÁGENES: sube el archivo a la carpeta img/ y escribe su ruta en foto: o imagen:
      (ej: foto: "img/lider1.jpg"). Si lo dejas "" no se muestra nada.
+   - CRÉDITOS: escribe el nombre del artista en fotoCredito: o imagenCredito:
+     (ej: fotoCredito: "@nombre_artista"). Si quieres que sea un enlace, pon también
+     fotoCreditoUrl: "https://..." (o imagenCreditoUrl:). Solo se muestra si hay imagen.
    - Cada cambio se guarda en GitHub (Commit changes) y en 1-2 minutos
      los jugadores lo ven al recargar la página.
    ===================================================================== */
@@ -53,7 +56,7 @@ const UMBRA = {
       id: "Cross.Nathaniel_3", clave: "NOCTIS.AETERNA",
       expediente: {
         nombre: "Diego Aquino Thorne",
-        foto: "",
+        foto: "", fotoCredito: "", fotoCreditoUrl: "",
         alias: "Noctis",
         nivelAmenaza: "POR DEFINIR",
         estado: "Bajo observación... ¿Futura amenaza?",
@@ -91,7 +94,7 @@ Sería verdaderamente lamentable que, después de tantos esfuerzos por mantener 
       id: "ELENA.GRAVES", clave: "MEMENTO.MORI_731",
       expediente: {
         nombre: "Rubén Doblas Gürdensen",
-        foto: "",
+        foto: "", fotoCredito: "", fotoCreditoUrl: "",
         alias: "land uten minner",
         nivelAmenaza: "POR DEFINIR",
         estado: "Experimento...¿Fallido?",
@@ -119,7 +122,7 @@ La faccion que maneja le da cierta "ventaja" los infectados no logran llegar has
       id: "Alistair-Voss", clave: "lasciate_ogni_speranza",
       expediente: {
         nombre: "Avery Green Brook",
-        foto: "",
+        foto: "", fotoCredito: "", fotoCreditoUrl: "",
         alias: "The Failed Vessel",
         nivelAmenaza: "POR DEFINIR",
         estado: "Experimento en curso",
@@ -165,13 +168,13 @@ Y cuando eso ocurra, no habrá absolutamente nada que pueda hacer al respecto.`,
       codigo: "PROYECTO: ÉBANO", titulo: "Manifiesto del Virus Molecular",
       clasificacion: "Nivel 5 / Alto Secreto",
       detalle: "Muestras aisladas obtenidas del Sector Norte. Reportes indican mutación celular acelerada y comportamiento hostil en los especímenes.",
-      imagen: "", estado: "BLOQUEADO // BAJO ESTUDIO", critico: true, liberado: false
+      imagen: "", imagenCredito: "", imagenCreditoUrl: "", estado: "BLOQUEADO // BAJO ESTUDIO", critico: true, liberado: false
     },
     {
       codigo: "REGISTRO: #UD-992", titulo: "Bitácora de Incidente - Sector 4",
       clasificacion: "Nivel 4",
       detalle: "Falla en los reactores cuánticos principales provocó una brecha temporal de 42 segundos. Protocolo de limpieza ejecutado con éxito.",
-      imagen: "", estado: "REGISTRO ARCHIVADO", critico: false, liberado: false
+      imagen: "", imagenCredito: "", imagenCreditoUrl: "", estado: "REGISTRO ARCHIVADO", critico: false, liberado: false
     }
   ]
 };

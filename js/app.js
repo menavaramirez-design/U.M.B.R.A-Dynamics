@@ -106,9 +106,16 @@ async function arranque() {
 }
 
 /* --------------------------- DIRECTORIO ------------------------------ */
-function imgHTML(src) {
-  if (!src) return '';
-  return '<img class="foto" src="' + String(src).replace(/"/g, '&quot;') + '" alt="" loading="lazy" onerror="this.remove()">';
+function imgHTML(im) {
+  if (!im || !im.src) return '';
+  const q = t => String(t).replace(/"/g, '&quot;');
+  let pie = '';
+  if (im.credito) {
+    const nombre = esc(im.credito);
+    const enlace = /^https?:\/\//i.test(im.url || '') ? '<a href="' + q(im.url) + '" target="_blank" rel="noopener noreferrer">' + nombre + '</a>' : nombre;
+    pie = '<figcaption>Arte: ' + enlace + '</figcaption>';
+  }
+  return '<figure class="fig"><img class="foto" src="' + q(im.src) + '" alt="" loading="lazy" onerror="this.parentNode.remove()">' + pie + '</figure>';
 }
 function ficha(clase, cab, nombre, cuerpo, sello, rojo, img) {
   return '<div class="ficha ' + clase + '"><div class="cab">' + esc(cab) + '</div>' + imgHTML(img) + '<div class="nombre">' + nombre + '</div>' +
@@ -126,10 +133,10 @@ function directorio() {
   const notas = e.notas && e.notas.length ? '<ul>' + e.notas.map(n => '<li>' + esc(n) + '</li>').join('') + '</ul>' : '';
   $('#mi-expediente').innerHTML = ficha('amenaza', 'EXPEDIENTE PERSONAL // AMENAZA: ' + e.nivelAmenaza, esc(e.nombre),
     (e.alias ? '<strong>Alias:</strong> ' + esc(e.alias) + '<br>' : '') + '<strong>Estado:</strong> ' + esc(e.estado) + '<br><br>' + '<span class="resumen">' + esc(e.resumen) + '</span>' + notas,
-    'OBJETIVO DE UMBRA', true, e.foto);
+    'OBJETIVO DE UMBRA', true, { src: e.foto, credito: e.fotoCredito, url: e.fotoCreditoUrl });
 
   $('#archivos').innerHTML = UMBRA.archivos.map(a => a.liberado
-    ? ficha(a.critico ? 'amenaza' : '', a.codigo, esc(a.titulo), '<strong>Clasificación:</strong> ' + esc(a.clasificacion) + '<br>' + esc(a.detalle), a.estado, a.critico, a.imagen)
+    ? ficha(a.critico ? 'amenaza' : '', a.codigo, esc(a.titulo), '<strong>Clasificación:</strong> ' + esc(a.clasificacion) + '<br>' + esc(a.detalle), a.estado, a.critico, { src: a.imagen, credito: a.imagenCredito, url: a.imagenCreditoUrl })
     : ficha('bloq', a.codigo, '<span class="tachado">████████████</span>', '<span class="tachado">██████ ████ ██████</span> ██████ ███', 'ACCESO RESTRINGIDO', true)
   ).join('');
   glitch($('header h1'));
