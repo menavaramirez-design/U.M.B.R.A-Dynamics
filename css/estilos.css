@@ -55,3 +55,6 @@ td{padding:7px 8px 7px 0;border-bottom:1px solid rgba(0,229,255,.12);color:var(-
 .fig .foto{margin-bottom:4px}
 .fig figcaption{font-size:.65rem;color:rgba(0,229,255,.55);letter-spacing:1px}
 .fig figcaption a{color:inherit}
+.tabla-scroll p{font-size:.8rem;line-height:1.7;color:var(--texto);margin:0 0 12px}
+.tabla-scroll ul{margin:0;padding-left:18px;font-size:.8rem;line-height:1.7;color:var(--texto)}
+.tabla-scroll li strong{color:#fff;font-weight:normal;letter-spacing:1px}

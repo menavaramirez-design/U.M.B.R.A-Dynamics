@@ -55,9 +55,16 @@ function menu() {
     { t: 'Archivos Protegidos_', fn: pedirClave }
   ]);
 }
+function htmlSobreNosotros(s) {
+  return '<div class="tabla-scroll">' + s.parrafos.map(p => '<p>' + esc(p) + '</p>').join('') +
+    '<h3>' + esc(s.divisionesTitulo) + '</h3><ul>' +
+    s.divisiones.map(x => '<li><strong>' + esc(x[0]) + ':</strong> ' + esc(x[1]) + '</li>').join('') + '</ul></div>';
+}
 function sobreNosotros() {
-  vista('[ EXPEDIENTE // MANIFIESTO ]', 'SOBRE NOSOTROS', UMBRA.publico.sobreNosotros + '\n\n' + UMBRA.publico.objetivo, '',
+  const s = UMBRA.publico.sobreNosotros;
+  vista('[ EXPEDIENTE // MANIFIESTO ]', 'SOBRE NOSOTROS', s.nombre + '\n' + s.subtitulo, htmlSobreNosotros(s),
     [{ t: '◀ VOLVER AL MENÚ', fn: menu, suave: true }]);
+  $('.caja').classList.add('ancha');
 }
 function tablaPersonal(sec) {
   const th = sec.columnas.map(c => '<th>' + esc(c) + '</th>').join('');

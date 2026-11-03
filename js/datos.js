@@ -15,8 +15,27 @@ const UMBRA = {
 
   // ---------- Parte pública (se ve sin iniciar sesión) ----------
   publico: {
-    sobreNosotros: "Umbra Dynamics opera en la frontera de la bio-tecnología avanzada y el despliegue de soluciones tácticas globales.",
-    objetivo: "// OBJETIVO: Preservar la supremacía de los líderes de facción ante escenarios de colapso planetario.",
+    // Texto de "Sobre Nosotros". Cada texto entre comillas es un párrafo.
+    sobreNosotros: {
+      nombre: "U.M.B.R.A. DYNAMICS",
+      subtitulo: "UNITED MEDICAL & BIOLOGICAL RESEARCH ASSOCIATION",
+      parrafos: [
+        "U.M.B.R.A. Dynamics es una corporación internacional dedicada a la investigación científica, biotecnología avanzada, desarrollo médico y seguridad global. Su misión pública consiste en proteger a la humanidad mediante la innovación, la prevención de amenazas biológicas y el desarrollo de tecnologías capaces de garantizar la supervivencia ante posibles catástrofes.",
+        "De cara al público, Umbra se presenta como una organización comprometida con el bienestar humano, ofreciendo ayuda médica, investigaciones innovadoras y soluciones para preservar el futuro de la civilización.",
+        "Sin embargo, detrás de esa imagen humanitaria existe una estructura mucho más reservada. Sus divisiones confidenciales realizan investigaciones y experimentos cuyos verdaderos objetivos no son conocidos por todos sus empleados.",
+        "Su propósito oculto es garantizar la supervivencia y supremacía de determinados líderes de facción ante un posible colapso planetario, asegurándose de que aquellos que consideran indispensables conserven su poder cuando el resto del mundo desaparezca."
+      ],
+      divisionesTitulo: "DIVISIONES PRINCIPALES",
+      divisiones: [
+        ["DIRECCIÓN", "administración y supervisión general."],
+        ["DIVISIÓN CIENTÍFICA", "investigación y experimentación."],
+        ["DIVISIÓN MÉDICA", "evaluaciones y estudios biológicos."],
+        ["SEGURIDAD", "protección de instalaciones y control de acceso."],
+        ["DIVISIÓN TÁCTICA", "desarrollo de recursos estratégicos."],
+        ["ARCHIVO CENTRAL", "almacenamiento de expedientes e información clasificada."]
+      ]
+    },
+
     // Registro de personal que se ve en "Alto Mando".
     // Cada sección es una tabla: columnas = títulos, filas = una lista por línea.
     altoMando: {
