@@ -1,6 +1,5 @@
-CÓMO EDITAR TU JUEGO
-1) En GitHub abre js/datos.js y pulsa el lápiz (Edit).
-2) Cambia nombres, claves y expedientes. Respeta comillas y comas.
-3) Para liberar un archivo de Umbra: liberado:false -> liberado:true
-4) Pulsa "Commit changes". En 1-2 minutos los jugadores lo ven al recargar.
-Cambia las claves "cambia-esta-clave-N" antes de jugar.
+Guarda aquí tus imágenes (jpg, png o webp).
+Luego, en js/datos.js, escribe la ruta: foto: "img/lider1.jpg"
+Para dar crédito al artista: fotoCredito: "@nombre" (y fotoCreditoUrl: "https://..." si quieres enlace)
+Recomendado: menos de 500 KB cada una para que cargue rápido en el móvil.
+Evita tildes, espacios y mayúsculas en el nombre del archivo.

@@ -15,25 +15,29 @@ const UMBRA = {
 
   // ---------- Parte pública (se ve sin iniciar sesión) ----------
   publico: {
-    // Texto de "Sobre Nosotros". Cada texto entre comillas es un párrafo.
+    // Texto de "Sobre Nosotros" (versión pública de Umbra).
+    // Cada texto entre comillas es un párrafo.
     sobreNosotros: {
       nombre: "U.M.B.R.A. DYNAMICS",
       subtitulo: "UNITED MEDICAL & BIOLOGICAL RESEARCH ASSOCIATION",
       parrafos: [
-        "U.M.B.R.A. Dynamics es una corporación internacional dedicada a la investigación científica, biotecnología avanzada, desarrollo médico y seguridad global. Su misión pública consiste en proteger a la humanidad mediante la innovación, la prevención de amenazas biológicas y el desarrollo de tecnologías capaces de garantizar la supervivencia ante posibles catástrofes.",
-        "De cara al público, Umbra se presenta como una organización comprometida con el bienestar humano, ofreciendo ayuda médica, investigaciones innovadoras y soluciones para preservar el futuro de la civilización.",
-        "Sin embargo, detrás de esa imagen humanitaria existe una estructura mucho más reservada. Sus divisiones confidenciales realizan investigaciones y experimentos cuyos verdaderos objetivos no son conocidos por todos sus empleados.",
-        "Su propósito oculto es garantizar la supervivencia y supremacía de determinados líderes de facción ante un posible colapso planetario, asegurándose de que aquellos que consideran indispensables conserven su poder cuando el resto del mundo desaparezca."
+        "U.M.B.R.A. Dynamics es una organización internacional dedicada a la investigación científica, el desarrollo tecnológico y la innovación médica, comprometida con la protección y el bienestar de la humanidad.",
+        "Su principal objetivo es construir un futuro más seguro mediante el desarrollo de tratamientos médicos, investigaciones biológicas, tecnologías de prevención y estrategias de respuesta ante posibles crisis globales.",
+        "La organización trabaja con especialistas de distintas áreas, colaborando en proyectos destinados a combatir enfermedades, mejorar la calidad de vida y encontrar soluciones frente a amenazas que podrían poner en peligro a la población."
       ],
-      divisionesTitulo: "DIVISIONES PRINCIPALES",
-      divisiones: [
-        ["DIRECCIÓN", "administración y supervisión general."],
-        ["DIVISIÓN CIENTÍFICA", "investigación y experimentación."],
-        ["DIVISIÓN MÉDICA", "evaluaciones y estudios biológicos."],
-        ["SEGURIDAD", "protección de instalaciones y control de acceso."],
-        ["DIVISIÓN TÁCTICA", "desarrollo de recursos estratégicos."],
-        ["ARCHIVO CENTRAL", "almacenamiento de expedientes e información clasificada."]
-      ]
+      actividadesIntro: "Entre sus principales actividades se encuentran:",
+      actividades: [
+        ["INVESTIGACIÓN MÉDICA", "desarrollo de tratamientos y soluciones para enfermedades."],
+        ["BIOTECNOLOGÍA", "innovación en procesos biológicos y científicos."],
+        ["SEGURIDAD GLOBAL", "prevención y respuesta ante posibles amenazas."],
+        ["AYUDA HUMANITARIA", "asistencia médica y recursos para comunidades vulnerables."],
+        ["DESARROLLO TECNOLÓGICO", "creación de herramientas para mejorar la supervivencia y calidad de vida."],
+        ["PREVENCIÓN DE CRISIS", "preparación ante escenarios de emergencia y catástrofes."]
+      ],
+      mision: "Proteger la vida, impulsar el conocimiento y garantizar que las futuras generaciones puedan vivir en un mundo más seguro y estable.",
+      vision: "Convertirnos en una de las instituciones científicas más importantes del mundo, donde la innovación y el compromiso humano trabajen juntos para preservar el futuro de la civilización.",
+      lema: "«UN FUTURO MEJOR COMIENZA CON NOSOTROS»",
+      firma: "U.M.B.R.A. DYNAMICS — INNOVATION. SCIENCE. HUMANITY."
     },
 
     // Registro de personal que se ve en "Alto Mando".
@@ -144,7 +148,7 @@ La faccion que maneja le da cierta "ventaja" los infectados no logran llegar has
         foto: "", fotoCredito: "@elcuadernodealan_", fotoCreditoUrl: "https://www.instagram.com/elcuadernodealan_/",
         alias: "The Failed Vessel",
         nivelAmenaza: "POR DEFINIR",
-        estado: "Experimento en curso",
+        estado: "Experimento fallido",
         resumen: `Avery es, sin duda, una de las mayores decepciones que hemos tenido que documentar.
 
 Se le presentó una oportunidad que cualquier otro sujeto habría aprovechado. Una posibilidad de trascender su insignificante existencia y convertirse en algo verdaderamente extraordinario. ¿Y qué hizo con ella?

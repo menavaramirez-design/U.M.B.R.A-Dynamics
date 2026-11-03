@@ -57,8 +57,11 @@ function menu() {
 }
 function htmlSobreNosotros(s) {
   return '<div class="tabla-scroll">' + s.parrafos.map(p => '<p>' + esc(p) + '</p>').join('') +
-    '<h3>' + esc(s.divisionesTitulo) + '</h3><ul>' +
-    s.divisiones.map(x => '<li><strong>' + esc(x[0]) + ':</strong> ' + esc(x[1]) + '</li>').join('') + '</ul></div>';
+    '<p>' + esc(s.actividadesIntro) + '</p><ul>' +
+    s.actividades.map(x => '<li><strong>' + esc(x[0]) + ':</strong> ' + esc(x[1]) + '</li>').join('') + '</ul>' +
+    '<h3>NUESTRA MISIÓN</h3><p>' + esc(s.mision) + '</p>' +
+    '<h3>NUESTRA VISIÓN</h3><p>' + esc(s.vision) + '</p>' +
+    '<p class="lema">' + esc(s.lema) + '</p><p class="firma">' + esc(s.firma) + '</p></div>';
 }
 function sobreNosotros() {
   const s = UMBRA.publico.sobreNosotros;

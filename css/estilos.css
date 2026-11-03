@@ -58,3 +58,6 @@ td{padding:7px 8px 7px 0;border-bottom:1px solid rgba(0,229,255,.12);color:var(-
 .tabla-scroll p{font-size:.8rem;line-height:1.7;color:var(--texto);margin:0 0 12px}
 .tabla-scroll ul{margin:0;padding-left:18px;font-size:.8rem;line-height:1.7;color:var(--texto)}
 .tabla-scroll li strong{color:#fff;font-weight:normal;letter-spacing:1px}
+.tabla-scroll p.lema{text-align:center;color:#fff;letter-spacing:2px;margin:22px 0 6px;text-shadow:0 0 8px rgba(0,229,255,.3)}
+.tabla-scroll p.firma{text-align:center;font-size:.65rem;color:rgba(0,229,255,.55);letter-spacing:2px}
+.tabla-scroll ul{margin-bottom:6px}
