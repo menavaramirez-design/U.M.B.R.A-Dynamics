@@ -1,4 +1,5 @@
 Guarda aquí tus imágenes (jpg, png o webp).
 Luego, en js/datos.js, escribe la ruta: foto: "img/lider1.jpg"
+Para dar crédito al artista: fotoCredito: "@nombre" (y fotoCreditoUrl: "https://..." si quieres enlace)
 Recomendado: menos de 500 KB cada una para que cargue rápido en el móvil.
 Evita tildes, espacios y mayúsculas en el nombre del archivo.
