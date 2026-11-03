@@ -56,7 +56,7 @@ const UMBRA = {
       id: "Cross.Nathaniel_3", clave: "NOCTIS.AETERNA",
       expediente: {
         nombre: "Diego Aquino Thorne",
-        foto: "", fotoCredito: "", fotoCreditoUrl: "",
+        foto: "", fotoCredito: "Artista: @elcuadernodealan", fotoCreditoUrl: "https://www.instagram.com/elcuadernodealan_/",
         alias: "Noctis",
         nivelAmenaza: "POR DEFINIR",
         estado: "Bajo observación... ¿Futura amenaza?",
@@ -94,7 +94,7 @@ Sería verdaderamente lamentable que, después de tantos esfuerzos por mantener 
       id: "ELENA.GRAVES", clave: "MEMENTO.MORI_731",
       expediente: {
         nombre: "Rubén Doblas Gürdensen",
-        foto: "", fotoCredito: "", fotoCreditoUrl: "",
+        foto: "", fotoCredito: "Artista: @elcuadenodealan", fotoCreditoUrl: "https://www.instagram.com/elcuadernodealan_/",
         alias: "land uten minner",
         nivelAmenaza: "POR DEFINIR",
         estado: "Experimento...¿Fallido?",
@@ -122,7 +122,7 @@ La faccion que maneja le da cierta "ventaja" los infectados no logran llegar has
       id: "Alistair-Voss", clave: "lasciate_ogni_speranza",
       expediente: {
         nombre: "Avery Green Brook",
-        foto: "", fotoCredito: "", fotoCreditoUrl: "",
+        foto: "", fotoCredito: "Artista: @elcuadernodealan", fotoCreditoUrl: "https://www.instagram.com/elcuadernodealan_/",
         alias: "The Failed Vessel",
         nivelAmenaza: "POR DEFINIR",
         estado: "Experimento en curso",
